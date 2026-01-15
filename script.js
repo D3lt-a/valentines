@@ -18,6 +18,13 @@ function startBgMusic() {
     }
 }
 
+function syncHeartToMusic() {
+    const heart = document.querySelector(".heart");
+    heart.style.animation = "none";      // reset
+    heart.offsetHeight;                  // force reflow
+    heart.style.animation = "pulseBeat 0.83s infinite ease-in-out";
+}
+
 function handleNo() {
     const no = document.querySelector(".no-button");
     const yes = document.querySelector(".yes-button");
@@ -30,6 +37,8 @@ function handleNo() {
 }
 
 function handleYes() {
+    startBgMusic();
+
     askScreen.classList.add("hidden");
     fadeOut(bgMusic);
 
@@ -40,9 +49,10 @@ function handleYes() {
         yesMusic.play();
         fadeIn(yesMusic);
 
-        startHeartRain();
+        syncHeartToMusic();
     }, 1200);
 }
+
 
 function fadeOut(audio) {
     let v = audio.volume;
