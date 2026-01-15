@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Valentine 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+        <text y='.9em' font-size='90'>🌼</text>
+    </svg>" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div id="flowerLayer"></div>
+    <div id="heartLayer"></div>
+
+    <audio id="bgMusic" src="./audio/dandelion.mp3" autoplay loop></audio>
+    <audio id="yesMusic" src="./audio/yes.mp3"></audio>
+
+    <div id="askScreen" class="screen">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
+            <h1>Will you be my Valentine? </h1>
+            <img src="./assets/flowers.gif" style="max-width: 15vw; min-width: 60px;">
+        </div>
+
+        <div>
+            <button class="yes-button" onclick="handleYes()">Yes</button>
+            <button class="no-button" onclick="handleNo()">No</button>
+        </div>
+
+        <img src="./assets/curious_cat.gif" alt="Cute cat" class="main-gif">
+    </div>
+
+    <div id="yesScreen" class="screen hidden">
+        <div class="yes-header">
+            <img src="./assets/cat_heart.gif" style="max-width: 15vw; min-width: 60px;">
+            <h1>YAY!! I knew you would say YES!</h1>
+            <img src="./assets/cat_heart.gif" style="max-width: 15vw; min-width: 60px;">
+        </div>
+
+        <strong>Happy Valentine’s Day, Pookie 🌹</strong>
+        <div class="heart">
+            ❤️
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
