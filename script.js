@@ -1,10 +1,22 @@
 const messages = ["Are you sure?", "Think again…", "Come on 😭", "Ibaze unkanze nanone"];
 let index = 0;
+let musicStarted = false;
 
 const bgMusic = document.getElementById("bgMusic");
 const yesMusic = document.getElementById("yesMusic");
 const askScreen = document.getElementById("askScreen");
 const yesScreen = document.getElementById("yesScreen");
+
+document.addEventListener("click", startBgMusic);
+
+
+function startBgMusic() {
+    if (!musicStarted) {
+        bgMusic.volume = 0.6;
+        bgMusic.play().catch(() => {});
+        musicStarted = true;
+    }
+}
 
 function handleNo() {
     const no = document.querySelector(".no-button");
